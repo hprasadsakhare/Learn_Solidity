@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.17;
-
+pragma solidity 0.8.28;
 contract Trust{
     struct Kid{
         uint amount;
@@ -15,7 +14,7 @@ contract Trust{
         admin = msg.sender;
     }
 
-    
+
 
     function addKid(address kid, uint timeToMaturity) external payable {
         require(msg.sender == admin,'only admin');
