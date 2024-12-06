@@ -8,4 +8,8 @@ contract lottery{
     constructor(){
         owner = msg.sender;
     }
+
+    function enter() public payable{
+        
+    }
 }
