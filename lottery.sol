@@ -14,4 +14,5 @@ contract lottery{
     function enter() public payable{
         
     }
+    //new func
 }
