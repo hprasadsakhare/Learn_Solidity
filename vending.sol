@@ -13,8 +13,6 @@ contract vandingMachine{
     function getVendingMachineBalance() public view returns (uint) {
         return dounutBalance[address(this)];
     }
-
-
     function restock(uint amount) public {
         require(msg.sender == owner, "Only the owner can restock this machine.");
         donutBalance[address(this)] += amount;

@@ -9,6 +9,8 @@ contract lottery{
         owner = msg.sender;
     }
 
+
+//enter function
     function enter() public payable{
         
     }
