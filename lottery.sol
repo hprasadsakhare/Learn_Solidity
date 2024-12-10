@@ -15,5 +15,8 @@ contract lottery{
         require(msg.value > .01 ether);
         players.push(payable(msg.sender));
     }
-    //new func
+    
+    function getRandomNumber() public view returns(uint){
+
+    }
 }
