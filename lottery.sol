@@ -12,7 +12,7 @@ contract lottery{
 
 //enter function
     function enter() public payable{
-        
+        players.push(payable(msg.sender));
     }
     //new func
 }
