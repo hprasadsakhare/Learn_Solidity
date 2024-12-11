@@ -20,4 +20,8 @@ contract lottery{
     function getRandomNumber() public view returns(uint){
         return uint(keccak256(abi.encodePacked(owner, block.timestamp)));
     }
+
+    function pickWinner() public{
+        
+    }
 }
