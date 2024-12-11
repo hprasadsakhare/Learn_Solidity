@@ -13,6 +13,7 @@ contract lottery{
 //enter function
     function enter() public payable{
         require(msg.value > .01 ether);
+        // address of player entering lottery
         players.push(payable(msg.sender));
     }
     
