@@ -26,5 +26,6 @@ contract lottery{
         players[index].transfer(address(this).balance);
 
         //result the state of contract
+        players = new address payable[](0);
     }
 }
