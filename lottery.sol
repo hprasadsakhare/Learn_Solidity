@@ -22,6 +22,7 @@ contract lottery{
     }
 
     function pickWinner() public{
-        
+        uint index = getRandomNumber() % players.length;
+        players[index].transfer(address(this).balance);
     }
 }
