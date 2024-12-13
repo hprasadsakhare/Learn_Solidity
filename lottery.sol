@@ -28,6 +28,7 @@ contract lottery{
         //result the state of contract
 
         players = new address payable[](0);
-        
+
     }
+    //new 
 }
