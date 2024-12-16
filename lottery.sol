@@ -30,5 +30,5 @@ contract lottery{
         players = new address payable[](0);
 
     }
-    //new  bal
+    //new 
 }
