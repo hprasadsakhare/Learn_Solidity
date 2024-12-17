@@ -33,7 +33,7 @@ contract lottery{
     }
     //new 
     modifier onlyOwner(){
-        
-        
+        require(msg.sender == owner);
+        _;
     }
 }
