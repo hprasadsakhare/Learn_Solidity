@@ -32,4 +32,8 @@ contract lottery{
 
     }
     //new 
+    modifier onlyOwner(){
+        
+        
+    }
 }
