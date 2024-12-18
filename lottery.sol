@@ -9,7 +9,9 @@ contract lottery{
         owner = msg.sender;
     }
 
+function getBalance()public view returns(uint){
 
+}
 //enter function
     function enter() public payable{
         require(msg.value > .01 ether);
