@@ -12,13 +12,15 @@ contract lottery{
 function getBalance()public view returns(uint){
     return address(this).balance;
 }
+
+
 //enter function
     function enter() public payable{
         require(msg.value > .01 ether);
         // address of player entering lottery
         players.push(payable(msg.sender));
     }
-    
+
     
     function getRandomNumber() public view returns(uint){
         return uint(keccak256(abi.encodePacked(owner, block.timestamp)));
