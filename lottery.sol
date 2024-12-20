@@ -14,6 +14,9 @@ function getBalance()public view returns(uint){
     return address(this).balance;
 }
 
+function getPlayer()public view return(address payable[] memory){
+    return players;
+}
 
 //enter function
     function enter() public payable{
@@ -37,7 +40,7 @@ function getBalance()public view returns(uint){
         players = new address payable[](0);
 
     }
-    
+
     //new 
     modifier onlyOwner(){
         require(msg.sender == owner);
