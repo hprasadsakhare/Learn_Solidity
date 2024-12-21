@@ -24,7 +24,6 @@ function getPlayer()public view return(address payable[] memory){
         // address of player entering lottery
         players.push(payable(msg.sender));
     }
-
     
     function getRandomNumber() public view returns(uint){
         return uint(keccak256(abi.encodePacked(owner, block.timestamp)));
