@@ -14,7 +14,6 @@ contract RealEstateAgreement {
 
     receive() external payable {} // ether
 
-
     fallback() external payable {} // ether + data
 
     modifier onlyOwner() {
@@ -24,7 +23,6 @@ contract RealEstateAgreement {
         );
         _;
     }
-
     function setPrice(uint256 _price) public onlyOwner {
         price = _price;
     }
