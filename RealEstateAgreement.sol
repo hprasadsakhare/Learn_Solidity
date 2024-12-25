@@ -23,6 +23,7 @@ contract RealEstateAgreement {
         );
         _;
     }
+    
     function setPrice(uint256 _price) public onlyOwner {
         price = _price;
     }
