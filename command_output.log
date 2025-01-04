@@ -1,0 +1,86 @@
+
+Command: shopt -s histappend
+Output:
+
+Exit Code: 0
+----
+Command: // SPDX-License-Identifier: MIT
+Output:
+bash: //: is a directory
+Exit Code: 126
+----
+Command: pragma solidity ^0.8.20
+Output:
+bash: pragma: command not found
+Exit Code: 127
+----
+Command: import "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+Output:
+bash: import: command not found
+Exit Code: 127
+----
+Command: contract GreenSRewardSystem is ERC20 {
+Output:
+bash: contract: command not found
+Exit Code: 127
+----
+Command: address public owner
+Output:
+bash: address: command not found
+Exit Code: 127
+----
+Command: // Reward tokens per km
+Output:
+bash: //: is a directory
+Exit Code: 126
+----
+Command: // Tracks the total kilometers traveled by each user
+Output:
+bash: //: is a directory
+Exit Code: 126
+----
+Command: // Tracks the rewards earned but not yet claimed by each user
+Output:
+bash: //: is a directory
+Exit Code: 126
+----
+Command: _
+Output:
+bash: _: command not found
+Exit Code: 127
+----
+Command: rewardRatePerKm = _rewardRatePerKm
+Output:
+bash: rewardRatePerKm: command not found
+Exit Code: 127
+----
+Command: owner = msg.sender
+Output:
+bash: owner: command not found
+Exit Code: 127
+----
+Command: // Record kilometers traveled by a user and calculate rewards
+Output:
+bash: //: is a directory
+Exit Code: 126
+----
+Command: // Update the total kilometers traveled by the user
+Output:
+bash: //: is a directory
+Exit Code: 126
+----
+Command: kilometersTraveled[user] += kilometers
+Output:
+bash: kilometersTraveled[user]: command not found
+Exit Code: 127
+----
+Command: // Calculate rewards
+Output:
+bash: //: is a directory
+Exit Code: 126
+----
+Command: uint256 reward = kilometers * rewardRatePerKm
+Output:
+bash: uint256: command not found
+Exit Code: 127
+----
