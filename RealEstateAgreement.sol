@@ -11,7 +11,7 @@ contract RealEstateAgreement {
         price = _price;
         sellerPaysClosingFees = false;
     }
-// new code
+// new 
     receive() external payable {} // ether
     fallback() external payable {} // ether + data
 
