@@ -27,7 +27,6 @@ contract GreenSRewardSystem is ERC20 {
         rewardRatePerKm = _rewardRatePerKm;
         owner = msg.sender;
     }
-
     // Record kilometers traveled by a user and calculate rewards
     function recordTravel(address user, uint256 kilometers) external onlyOwner {
         require(user != address(0), "Invalid user address");
