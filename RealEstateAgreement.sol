@@ -13,7 +13,7 @@ contract RealEstateAgreement {
     }
 // new code is now issue
     receive() external payable {} // ether to
-    fallback() external payable {} // ether + data
+    fallback() external payable {} // ether + data to contract
 
     modifier onlyOwner() {
         require(
