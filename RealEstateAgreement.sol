@@ -12,7 +12,7 @@ contract RealEstateAgreement {
         sellerPaysClosingFees = false;
     }
 // new code is now issue
-    receive() external payable {} // ether to
+    receive() external payable {} // ether to gwi
     fallback() external payable {} // ether + data to contract
 
     modifier onlyOwner() {

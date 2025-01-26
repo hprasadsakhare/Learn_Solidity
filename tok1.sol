@@ -35,7 +35,7 @@ contract GreenSRewardSystem is ERC20 {
         // Update the total kilometers traveled by the user
         kilometersTraveled[user] += kilometers;
 
-        // Calculate rewards
+        // Calculate rewards cont
         uint256 reward = kilometers * rewardRatePerKm;
 
         // Ensure sufficient tokens are available in the owner's balance
