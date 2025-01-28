@@ -26,6 +26,7 @@ contract RealEstateAgreement {
     function setPrice(uint256 _price) public onlyOwner {
         price = _price;
     }
+    
 
 
     function setClosingFeeAgreement(bool _ownerPays) public virtual onlyOwner {
