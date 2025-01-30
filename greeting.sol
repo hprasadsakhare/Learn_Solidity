@@ -4,7 +4,7 @@ pragma solidity 0.8.28;
 contract Greeting{
     string public name;
     string public greetingPrefix = "Hello";
-
+    //ftradce
     constructor(string memory initialName){
         name = initialName;
     }
