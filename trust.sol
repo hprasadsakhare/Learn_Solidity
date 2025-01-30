@@ -9,7 +9,7 @@ contract Trust{
     
     mapping(address => Kid) public kids;
     address public admin;
-
+//ftrace
     constructor(){
         admin = msg.sender;
     }
