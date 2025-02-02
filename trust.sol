@@ -9,7 +9,7 @@ contract Trust{
     
     mapping(address => Kid) public kids;
     address public admin;
-
+// ghj
     constructor(){
         admin = msg.sender;
     }
