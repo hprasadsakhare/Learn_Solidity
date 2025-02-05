@@ -13,6 +13,8 @@ contract Lottery {
         return address(this).balance;
     }
 
+    // ne 
+
     function getPlayers() public view returns (address payable[] memory) {
         return players;
     }
