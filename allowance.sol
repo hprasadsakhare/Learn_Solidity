@@ -10,4 +10,9 @@ contract allowance{
     }
 
     mapping(address => uint) public allowances;
+    address public owner;
+
+    function addAllowances(address _to, uint amt)public{
+
+    }
 }
