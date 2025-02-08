@@ -8,6 +8,8 @@ contract allowance{
     function checkBal() public view returns(uint){
         return address(this).balance;
     }
+//
+
 
     mapping(address => uint) public allowances;
     address public owner;
