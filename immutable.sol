@@ -22,5 +22,8 @@ contract Immutable{
     function c() public pure returns(address){
         return owner2;
     }
+    function s() public view returns(address){
+        return owner3;
+    }
 
 }
