@@ -32,4 +32,14 @@ contract CrowdFunding{
     receive() external payable {
         Contribute();
     }
+
+    function getReffund() public {
+        require(block.timestamp > timePeriod, "Funding is still On!");
+        require(fundsRaised < goal, "Funding was Sucessful");
+        require(funders[msg.sender] > 0, "Not a funder");
+
+        payable(msg.sender).transfer(funders[msg.sender]);
+        fundsRaised -=funders[msg.sender];
+        funders[msg.sender] = 0;
+    }
 }
