@@ -51,4 +51,12 @@ contract CrowdFunding{
         mapping(address => bool) votess;
         bool Completed;
     }
+
+    mapping (uint => Request) public AllRequests;
+    uint public numReq;
+
+    function createRequest(string memory _description, uint _amount, address payable reciver) public{
+        require(msg.sender == owner,"You are not the owner");
+        Request storage newRequest = AllRequests[numReq];
+    }
 }
