@@ -48,5 +48,7 @@ contract CrowdFunding{
         uint amount;
         address payable reciver;
         uint noOfVoters;
+        mapping(address => bool) votess;
+        bool Completed;
     }
 }
