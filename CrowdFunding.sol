@@ -42,4 +42,11 @@ contract CrowdFunding{
         fundsRaised -=funders[msg.sender];
         funders[msg.sender] = 0;
     }
+
+    struct Requests{
+        string description;
+        uint amount;
+        address payable reciver;
+        uint noOfVoters;
+    }
 }
