@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.28;
 
-contract CrowdFunding{
+contract CrowdFunding {
     address public owner;
     mapping(address => uint) public funders;
     uint public goal;
@@ -10,7 +10,7 @@ contract CrowdFunding{
     uint public fundsRaised;
     uint public timePeriod;
 
-    constructor(uint _goal, uint _timePeriod){
+    constructor(uint _goal, uint _timePeriod) {
         goal = _goal;
         timePeriod = block.timestamp + _timePeriod;
         owner = msg.sender;
@@ -19,9 +19,9 @@ contract CrowdFunding{
 
     function Contribute() public payable {
         require(block.timestamp < timePeriod, "Funding Time is Over!");
-        require(msg.value >= minAmount, "Minimum amount criteria not satisfy");
+        require(msg.value >= minAmount, "Minimum amount criteria not satisfied");
 
-        if(funders[msg.sender] == 0){
+        if (funders[msg.sender] == 0) {
             noOfFunders++;
         }
 
@@ -35,15 +35,15 @@ contract CrowdFunding{
 
     function getReffund() public {
         require(block.timestamp > timePeriod, "Funding is still On!");
-        require(fundsRaised < goal, "Funding was Sucessful");
+        require(fundsRaised < goal, "Funding was Successful");
         require(funders[msg.sender] > 0, "Not a funder");
 
         payable(msg.sender).transfer(funders[msg.sender]);
-        fundsRaised -=funders[msg.sender];
+        fundsRaised -= funders[msg.sender];
         funders[msg.sender] = 0;
     }
 
-    struct Requests{
+    struct Requests {
         string description;
         uint amount;
         address payable reciver;
@@ -52,11 +52,18 @@ contract CrowdFunding{
         bool Completed;
     }
 
-    mapping (uint => Request) public AllRequests;
+    mapping(uint => Requests) public AllRequests;
     uint public numReq;
 
-    function createRequest(string memory _description, uint _amount, address payable reciver) public{
-        require(msg.sender == owner,"You are not the owner");
-        Request storage newRequest = AllRequests[numReq];
+    function createRequest(string memory _description, uint _amount, address payable _reciver) public {
+        require(msg.sender == owner, "You are not the owner");
+        Requests storage newRequest = AllRequests[numReq];
+        numReq++;
+
+        newRequest.description = _description;
+        newRequest.amount = _amount;
+        newRequest.reciver = _reciver;
+        newRequest.Completed = false;
+        newRequest.noOfVoters = 0;
     }
 }
