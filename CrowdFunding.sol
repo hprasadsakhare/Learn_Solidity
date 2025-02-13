@@ -33,7 +33,7 @@ contract CrowdFunding {
         Contribute();
     }
 
-    function getReffund() public {
+    function getRefund() public {
         require(block.timestamp > timePeriod, "Funding is still On!");
         require(fundsRaised < goal, "Funding was Successful");
         require(funders[msg.sender] > 0, "Not a funder");
@@ -46,24 +46,41 @@ contract CrowdFunding {
     struct Requests {
         string description;
         uint amount;
-        address payable reciver;
+        address payable receiver;
         uint noOfVoters;
-        mapping(address => bool) votess;
-        bool Completed;
+        mapping(address => bool) votes;
+        bool completed;
     }
 
     mapping(uint => Requests) public AllRequests;
     uint public numReq;
 
-    function createRequest(string memory _description, uint _amount, address payable _reciver) public {
-        require(msg.sender == owner, "You are not the owner");
+    modifier isOwner(){
+        require(msg.sender == owner, "You are not owner");
+        _;
+    }
+
+    function createRequest(string memory _description, uint _amount, address payable _receiver) isOwner public {
         Requests storage newRequest = AllRequests[numReq];
         numReq++;
 
         newRequest.description = _description;
         newRequest.amount = _amount;
-        newRequest.reciver = _reciver;
-        newRequest.Completed = false;
+        newRequest.receiver = _receiver;
+        newRequest.completed = false;
         newRequest.noOfVoters = 0;
+    }
+
+    function votingForRequest(uint reqNum) public {
+        require(funders[msg.sender] > 0, "Not a Funder");
+        Requests storage thisRequest = AllRequests[reqNum];
+
+        require(thisRequest.votes[msg.sender] == false, "Already Voted");
+        thisRequest.votes[msg.sender] = true;
+        thisRequest.noOfVoters++;
+    }
+
+    function makePayment(uint reqNum) public{
+         
     }
 }
