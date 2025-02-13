@@ -4,10 +4,6 @@ pragma solidity 0.8.28;
 contract Allowance {
     receive() external payable {}
 
-    function checkBal() public view returns (uint) {
-        return address(this).balance;
-    }
-
     mapping(address => uint) public allowances;
     address public owner;
 
@@ -16,32 +12,39 @@ contract Allowance {
     }
 
     modifier onlyOwner() {
-        require(owner == msg.sender, "Not the owner");
+        require(msg.sender == owner, "Not the owner");
         _;
     }
 
-    function addAllowances(address _to, uint amt) public onlyOwner {
-        allowances[_to] += amt;
+    modifier hasAllowance(uint amt) {
+        require(allowances[msg.sender] >= amt, "Insufficient allowance");
+        _;
     }
 
-    function withdraw(uint amt) public {
-        require(allowances[msg.sender] >= amt, "Insufficient allowance");
+    function checkBal() external view returns (uint) {
+        return address(this).balance;
+    }
+
+    function setAllowance(address _to, uint amt) external onlyOwner {
+        allowances[_to] = amt;
+    }
+
+    function withdraw(uint amt) external hasAllowance(amt) {
         require(address(this).balance >= amt, "Contract balance too low");
-        
         allowances[msg.sender] -= amt;
         payable(msg.sender).transfer(amt);
     }
 
-    function reduceAllowance(address _to, uint amt) public onlyOwner {
-        require(allowances[_to] >= amt, "Allowance too low");
-        allowances[_to] -= amt;
+    function adjustAllowance(address _to, uint amt, bool increase) external onlyOwner {
+        if (increase) {
+            allowances[_to] += amt;
+        } else {
+            require(allowances[_to] >= amt, "Allowance too low");
+            allowances[_to] -= amt;
+        }
     }
 
-    function resetAllowance(address _to) public onlyOwner {
-        allowances[_to] = 0;
-    }
-
-    function transferOwnership(address newOwner) public onlyOwner {
+    function transferOwnership(address newOwner) external onlyOwner {
         require(newOwner != address(0), "Invalid address");
         owner = newOwner;
     }
