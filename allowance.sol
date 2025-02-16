@@ -11,6 +11,8 @@ contract Allowance {
         owner = msg.sender;
     }
 
+    
+
     modifier onlyOwner() {
         require(msg.sender == owner, "Not the owner");
         _;
