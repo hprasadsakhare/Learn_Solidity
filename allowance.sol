@@ -34,6 +34,8 @@ contract Allowance {
         allowances[msg.sender] -= amt;
         payable(msg.sender).transfer(amt);
     }
+
+    
     function adjustAllowance(address _to, uint amt, bool increase) external onlyOwner {
         if (increase) {
             allowances[_to] += amt;
