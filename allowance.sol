@@ -11,7 +11,6 @@ contract Allowance {
         owner = msg.sender;
     }
 
-
     modifier onlyOwner() {
         require(msg.sender == owner, "Not the owner");
         _;
@@ -48,5 +47,30 @@ contract Allowance {
     function transferOwnership(address newOwner) external onlyOwner {
         require(newOwner != address(0), "Invalid address");
         owner = newOwner;
+    }
+
+    // NEW FUNCTION: Deposit funds into the contract
+    function deposit() external payable {
+        require(msg.value > 0, "Deposit must be greater than zero");
+    }
+
+    // NEW FUNCTION: Emergency withdraw (only owner)
+    function emergencyWithdraw() external onlyOwner {
+        payable(owner).transfer(address(this).balance);
+    }
+
+    // NEW FUNCTION: Get allowance of any address
+    function getAllowance(address _addr) external view returns (uint) {
+        return allowances[_addr];
+    }
+
+    // NEW FUNCTION: Revoke allowance
+    function revokeAllowance(address _addr) external onlyOwner {
+        allowances[_addr] = 0;
+    }
+
+    // NEW FUNCTION: Renounce ownership
+    function renounceOwnership() external onlyOwner {
+        owner = address(0);
     }
 }
