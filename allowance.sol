@@ -54,7 +54,6 @@ contract Allowance {
     function deposit() external payable {
         require(msg.value > 0, "Deposit must be greater than zero");
     }
-
     // NEW FUNCTION: Emergency withdraw (only owner)
     function emergencyWithdraw() external onlyOwner {
         payable(owner).transfer(address(this).balance);
