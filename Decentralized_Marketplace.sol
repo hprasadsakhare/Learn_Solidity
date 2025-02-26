@@ -11,10 +11,10 @@ contract DecentralizedMarketplace {
         address payable seller;
     }
 
-
     mapping(uint => Item) public items;
     mapping(address => uint[]) public sellerItems;
     uint public itemCount;
+
 
     event ItemListed(uint indexed id, string name, uint price, uint quantity, address indexed seller);
     event ItemPurchased(uint indexed id, address indexed buyer, uint quantity);
