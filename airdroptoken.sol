@@ -23,7 +23,9 @@ contract AirdropToken {
         IFakeToken _token,
         address[] memory _addressArray,
         uint256[] memory _amountArray
-    ) public {
+    )
+    
+     public {
         require(_addressArray.length == _amountArray.length, "Mismatched arrays");
 
         for (uint256 i = 0; i < _addressArray.length; i++) {
