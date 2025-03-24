@@ -17,7 +17,6 @@ contract AirdropToken {
             require(_token.transfer(_addressArray[i], _amountArray[i]), "Transfer failed");
         }
     }
-
     function airdropWithTransferFrom(
         IFakeToken _token,
         address[] memory _addressArray,
