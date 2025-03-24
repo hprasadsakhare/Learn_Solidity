@@ -18,8 +18,6 @@ contract AirdropToken {
         }
     }
 
-
-
     function airdropWithTransferFrom(
         IFakeToken _token,
         address[] memory _addressArray,
