@@ -19,6 +19,8 @@ contract AirdropToken {
         }
     }
 
+
+
     function airdropWithTransferFrom(
         IFakeToken _token,
         address[] memory _addressArray,
@@ -26,7 +28,7 @@ contract AirdropToken {
     )
     
 
-    
+
      public {
         require(_addressArray.length == _amountArray.length, "Mismatched arrays");
 
