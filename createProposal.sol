@@ -8,6 +8,7 @@ contract ProposalContract {
         address proposer;
     }
 
+
     Proposal[] public proposals;
 
     function createProposal(string memory _title) public {
