@@ -15,6 +15,7 @@ contract Trust{
     }
 
 
+
 // anew 
     function addKid(address kid, uint timeToMaturity) external payable {
         require(msg.sender == admin,'only admin');
