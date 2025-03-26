@@ -8,7 +8,6 @@ contract Greeting{
     constructor(string memory initialName){
         name = initialName;
     }
-
     function setName(string memory newName) public {
         name = newName;
     }
