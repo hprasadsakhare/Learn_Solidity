@@ -6,6 +6,7 @@ contract RealEstateAgreement {
     uint256 public price;
     bool public sellerPaysClosingFees;
 
+
     constructor(uint256 _price) {
         owner = msg.sender;
         price = _price;
@@ -13,6 +14,8 @@ contract RealEstateAgreement {
     }
 
 // new code is now issue described 
+
+
     receive() external payable {} // ether to gwi
     fallback() external payable {} // ether + data to contract 
 
