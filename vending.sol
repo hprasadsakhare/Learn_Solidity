@@ -9,6 +9,8 @@ contract VendingMachine {
         owner = msg.sender;
         donutBalance[address(this)] = 100;
     }
+
+    
     function getVendingMachineBalance() public view returns (uint) {
         return donutBalance[address(this)];
     }
