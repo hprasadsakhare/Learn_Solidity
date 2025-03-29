@@ -43,6 +43,7 @@ contract CrowdFunding {
         funders[msg.sender] = 0;
     }
 
+
     struct Requests {
         string description;
         uint amount;
@@ -52,7 +53,6 @@ contract CrowdFunding {
         bool completed;
     }
     
-
     mapping(uint => Requests) public AllRequests;
     uint public numReq;
 
