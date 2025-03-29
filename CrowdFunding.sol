@@ -51,6 +51,7 @@ contract CrowdFunding {
         mapping(address => bool) votes;
         bool completed;
     }
+    
 
     mapping(uint => Requests) public AllRequests;
     uint public numReq;
