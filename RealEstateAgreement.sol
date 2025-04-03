@@ -5,8 +5,6 @@ contract RealEstateAgreement {
     address private owner;
     uint256 public price;
     bool public sellerPaysClosingFees;
-
-
     constructor(uint256 _price) {
         owner = msg.sender;
         price = _price;
