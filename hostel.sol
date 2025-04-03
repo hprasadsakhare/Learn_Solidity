@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-contract Hostel{
 
+contract Hostel{
 
     address payable tenant;
     address payable landlored;
