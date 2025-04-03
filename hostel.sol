@@ -3,6 +3,7 @@ pragma solidity ^0.8.19;
 
 contract Hostel{
 
+
     address payable tenant;
     address payable landlored;
 
