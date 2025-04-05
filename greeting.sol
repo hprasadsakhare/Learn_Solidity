@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
+
 contract Greeting{
     string public name;
     string public greetingPrefix = "Hello";
     //ftradce
+
     constructor(string memory initialName){
         name = initialName;
     }
