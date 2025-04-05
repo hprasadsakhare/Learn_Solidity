@@ -2,10 +2,12 @@
 pragma solidity 0.8.29;
 
 
+
 interface IFakeToken {
     function transfer(address _to, uint256 _amount) external returns (bool);
     function transferFrom(address _from, address _to, uint256 _amount) external returns (bool);
 }
+
 
 contract AirdropToken {
     function airdropWithTransfer(
