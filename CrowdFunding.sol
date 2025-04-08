@@ -43,6 +43,7 @@ contract CrowdFunding {
         funders[msg.sender] = 0;
     }
 
+
     struct Requests {
         string description;
         uint amount;
