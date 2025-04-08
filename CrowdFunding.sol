@@ -43,7 +43,6 @@ contract CrowdFunding {
         funders[msg.sender] = 0;
     }
 
-
     struct Requests {
         string description;
         uint amount;
@@ -89,4 +88,5 @@ contract CrowdFunding {
          thisRequest.receiver.transfer(thisRequest.amount);
          thisRequest.completed = true;
     }
+    
 }
