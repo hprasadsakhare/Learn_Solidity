@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.29;
 
-
 contract RealEstateAgreement {
     address payable public owner;
     address public buyer;
@@ -12,6 +11,7 @@ contract RealEstateAgreement {
     event AgreementUpdated(uint256 newPrice, bool sellerPaysFees);
     event PropertyPurchased(address indexed buyer, uint256 price);
     event FundsWithdrawn(address indexed to, uint256 amount);
+
 
     constructor(uint256 _price) {
         owner = payable(msg.sender);
