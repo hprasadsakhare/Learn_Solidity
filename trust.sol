@@ -8,6 +8,7 @@ contract Trust {
         bool paid;
     }
 
+
     mapping(address => Kid) public kids;
     address public admin;
 
