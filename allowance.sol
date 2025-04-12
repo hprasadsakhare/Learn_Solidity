@@ -8,6 +8,7 @@ contract Allowance {
     mapping(address => uint) public allowances;
     address public owner;
 
+
     constructor() {
         owner = msg.sender;
     }
