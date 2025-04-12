@@ -54,6 +54,7 @@ contract Trust {
             return kids[kid].maturity - block.timestamp;
         }
     }
+    
 
     // Allow admin to check kid's status
     function getKidDetails(address kid) external view returns (uint, uint, bool) {
