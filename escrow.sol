@@ -12,6 +12,7 @@ contract Escrow {
     enum EscrowState { AWAITING_PAYMENT, AWAITING_DELIVERY, COMPLETE, DISPUTED }
     EscrowState public state;
 
+
     modifier onlyBuyer() {
         require(msg.sender == buyer, "Only the buyer can call this function.");
         _;
@@ -21,6 +22,7 @@ contract Escrow {
         require(msg.sender == seller, "Only the seller can call this function.");
         _;
     }
+    
 
     modifier onlyArbiter() {
         require(msg.sender == arbiter, "Only the arbiter can call this function.");
