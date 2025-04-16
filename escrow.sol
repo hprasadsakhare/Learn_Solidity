@@ -34,12 +34,14 @@ contract Escrow {
         _;
     }
 
+
     constructor(address _buyer, address _seller, address _arbiter) {
         buyer = _buyer;
         seller = _seller;
         arbiter = _arbiter;
         state = EscrowState.AWAITING_PAYMENT;
     }
+
 
     // Buyer deposits funds into escrow
     function deposit() external payable onlyBuyer inState(EscrowState.AWAITING_PAYMENT) {
