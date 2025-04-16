@@ -34,6 +34,7 @@ contract Trust {
         emit KidAdded(kid, msg.value, block.timestamp + timeToMaturity);
     }
 
+
     // Function for kids to withdraw after maturity
     function withdraw() external {
         Kid storage kidData = kids[msg.sender];
@@ -46,6 +47,7 @@ contract Trust {
 
         emit Withdrawal(msg.sender, kidData.amount);
     }
+
 
     // View function to get remaining time for a kid
     function timeLeft(address kid) external view returns (uint) {
