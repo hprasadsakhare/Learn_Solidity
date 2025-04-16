@@ -21,7 +21,6 @@ contract RealEstateAgreement {
         isSold = false;
     }
     
-
     // Allow the contract to receive Ether
     receive() external payable {}
     fallback() external payable {}
