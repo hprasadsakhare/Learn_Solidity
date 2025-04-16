@@ -20,7 +20,7 @@ contract RealEstateAgreement {
         sellerPaysClosingFees = false;
         isSold = false;
     }
-    
+
     // Allow the contract to receive Ether
     receive() external payable {}
     fallback() external payable {}
@@ -34,7 +34,6 @@ contract RealEstateAgreement {
         require(!isSold, "Property already sold.");
         _;
     }
-
     function setPrice(uint256 _price) public onlyOwner notSold {
         price = _price;
         emit AgreementUpdated(price, sellerPaysClosingFees);
@@ -44,6 +43,7 @@ contract RealEstateAgreement {
         sellerPaysClosingFees = _ownerPays;
         emit AgreementUpdated(price, sellerPaysClosingFees);
     }
+
 
     function buyProperty() public payable notSold {
         require(msg.value == price, "Incorrect payment amount.");
@@ -60,7 +60,6 @@ contract RealEstateAgreement {
         require(success, "Withdrawal failed.");
         emit FundsWithdrawn(owner, balance);
     }
-
 
     function getContractBalance() public view returns (uint256) {
         return address(this).balance;
