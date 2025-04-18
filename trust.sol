@@ -48,7 +48,6 @@ contract Trust {
         emit Withdrawal(msg.sender, kidData.amount);
     }
 
-
     // View function to get remaining time for a kid
     function timeLeft(address kid) external view returns (uint) {
         if (block.timestamp >= kids[kid].maturity) {
