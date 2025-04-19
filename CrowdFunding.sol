@@ -10,12 +10,14 @@ contract CrowdFunding {
     uint public fundsRaised;
     uint public timePeriod;
 
+
     constructor(uint _goal, uint _timePeriod) {
         goal = _goal;
         timePeriod = block.timestamp + _timePeriod;
         owner = msg.sender;
         minAmount = 1000 wei;
     }
+
 
     function Contribute() public payable {
         require(block.timestamp < timePeriod, "Funding Time is Over!");
