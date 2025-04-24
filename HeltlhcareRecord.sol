@@ -12,6 +12,7 @@ contract HealthcareRecords {
         string treatment;
         uint256 timestamp;
     }
+    
 
     mapping(uint256 => Record[]) private patientRecords;
 
