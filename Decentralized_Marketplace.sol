@@ -11,8 +11,6 @@ contract DecentralizedMarketplace {
         address payable seller;
     }
 
-
-
     mapping(uint => Item) public items;
     mapping(address => uint[]) public sellerItems;
     uint public itemCount;
