@@ -14,7 +14,9 @@ contract HealthcareRecords {
     }
     
 
+
     mapping(uint256 => Record[]) private patientRecords;
+
 
     mapping(address => bool) private authorizedProviders;
 
