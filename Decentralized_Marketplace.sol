@@ -66,6 +66,7 @@ contract DecentralizedMarketplace {
         emit ItemUpdated(_id, _name, _price, _quantity);
     }
 
+
     function deleteItem(uint _id) external onlySeller(_id) {
         delete items[_id];
         emit ItemDeleted(_id);
