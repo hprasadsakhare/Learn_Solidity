@@ -17,6 +17,7 @@ contract DecentralizedMarketplace {
     uint public itemCount;
 
 
+
     event ItemListed(uint indexed id, string name, uint price, uint quantity, address indexed seller);
     event ItemPurchased(uint indexed id, address indexed buyer, uint quantity);
     event ItemUpdated(uint indexed id, string name, uint price, uint quantity);
