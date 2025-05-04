@@ -10,6 +10,7 @@ contract Greeting{
         name = initialName;
     }
     
+    
     function setName(string memory newName) public {
         name = newName;
     }
