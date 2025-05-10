@@ -61,7 +61,6 @@ contract RealEstateAgreement {
         emit FundsWithdrawn(owner, balance);
     }
 
-
     function getContractBalance() public view returns (uint256) {
         return address(this).balance;
     }
