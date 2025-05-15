@@ -19,6 +19,4 @@ contract Greeting{
         return string(abi.encodePacked(greetingPrefix, name));
     }
     
-    
-
 }
