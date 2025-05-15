@@ -32,6 +32,7 @@ contract DecentralizedMarketplace {
         if (items[_id].seller != msg.sender) revert NotSeller();
         _;
     }
+    
 
     function listItem(string memory _name, string memory _description, uint _price, uint _quantity) external {
         if (_price <= 0) revert InvalidPrice();
