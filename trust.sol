@@ -17,6 +17,7 @@ contract Trust {
     constructor() {
         admin = msg.sender;
     }
+    
 
     // Function to add a kid's trust
     function addKid(address kid, uint timeToMaturity) external payable {
