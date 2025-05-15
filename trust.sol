@@ -14,10 +14,11 @@ contract Trust {
     event KidAdded(address indexed kid, uint amount, uint maturityTime);
     event Withdrawal(address indexed kid, uint amount);
 
+
     constructor() {
         admin = msg.sender;
     }
-    
+
 
     // Function to add a kid's trust
     function addKid(address kid, uint timeToMaturity) external payable {
