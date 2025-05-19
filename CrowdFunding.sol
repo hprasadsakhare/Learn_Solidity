@@ -17,7 +17,6 @@ contract CrowdFunding {
         minAmount = 1000 wei;
     }
 
-
     function Contribute() public payable {
         require(block.timestamp < timePeriod, "Funding Time is Over!");
         require(msg.value >= minAmount, "Minimum amount criteria not satisfied");
