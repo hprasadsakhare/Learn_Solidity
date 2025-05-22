@@ -44,6 +44,7 @@ contract DecentralizedMarketplace {
         
         emit ItemListed(itemCount, _name, _price, _quantity, msg.sender);
     }
+    
 
     function buyItem(uint _id, uint _quantity) external payable {
         Item storage item = items[_id];
