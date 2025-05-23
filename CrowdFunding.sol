@@ -10,6 +10,7 @@ contract CrowdFunding {
     uint public fundsRaised;
     uint public timePeriod;
 
+
     constructor(uint _goal, uint _timePeriod) {
         goal = _goal;
         timePeriod = block.timestamp + _timePeriod;
