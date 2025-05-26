@@ -13,7 +13,6 @@ contract RealEstateAgreement {
     event PropertyPurchased(address indexed buyer, uint256 price);
     event FundsWithdrawn(address indexed to, uint256 amount);
 
-
     constructor(uint256 _price) {
         owner = payable(msg.sender);
         price = _price;
