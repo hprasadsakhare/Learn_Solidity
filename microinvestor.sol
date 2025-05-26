@@ -6,7 +6,6 @@ contract MicroInvestment {
     uint256 public minBatchAmount;
     uint256 public accumulatedAmount;
     
-    
     event InvestmentDetected(address indexed user, uint256 amount);
     event BatchReady(uint256 totalAmount);
     event SwapPerformed(uint256 amount, string token);
