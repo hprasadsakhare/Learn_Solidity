@@ -2,6 +2,7 @@
 pragma solidity ^0.8.20;
 
 contract ProposalContract {
+    
     enum ProposalStatus { Active, Passed, Failed, Canceled }
     
     struct Proposal {
