@@ -80,10 +80,12 @@ contract CrowdFunding {
         thisRequest.noOfVoters++;
     }
 
+
     function makePayment(uint reqNum) public{
          Requests storage thisRequest = AllRequests[reqNum];
          require(thisRequest.completed == false,"Completed Already");
          require(thisRequest.noOfVoters >= noOfFunders / 2, "Voting not is favour");
+
 
          thisRequest.receiver.transfer(thisRequest.amount);
          thisRequest.completed = true;
