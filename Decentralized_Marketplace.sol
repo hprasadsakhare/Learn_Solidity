@@ -33,6 +33,7 @@ contract DecentralizedMarketplace {
         _;
     }
     
+    
 
     function listItem(string memory _name, string memory _description, uint _price, uint _quantity) external {
         if (_price <= 0) revert InvalidPrice();
@@ -44,6 +45,7 @@ contract DecentralizedMarketplace {
         
         emit ItemListed(itemCount, _name, _price, _quantity, msg.sender);
     }
+
 
     function buyItem(uint _id, uint _quantity) external payable {
         Item storage item = items[_id];
