@@ -11,6 +11,7 @@ contract AirdropToken {
     event AirdropTransfer(address indexed to, uint256 amount);
     event AirdropTransferFrom(address indexed from, address indexed to, uint256 amount);
 
+
     /**
      * @notice Performs airdrop by transferring tokens directly from contract's balance.
      */
