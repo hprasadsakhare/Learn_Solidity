@@ -18,6 +18,7 @@ contract Trust {
         admin = msg.sender;
     }
 
+
     // Function to add a kid's trust
     function addKid(address kid, uint timeToMaturity) external payable {
         require(msg.sender == admin, "Only admin can add kids");
