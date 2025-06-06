@@ -12,7 +12,6 @@ contract MicroInvestment {
     
     mapping(address => uint256) public userBalances;
     
-    
     constructor(uint256 _minBatchAmount) {
         owner = msg.sender;
         minBatchAmount = _minBatchAmount;
