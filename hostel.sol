@@ -24,5 +24,4 @@ contract Hostel{
         address payable currentTenant;
     }
 
-
 }
