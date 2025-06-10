@@ -8,7 +8,6 @@ contract RealEstateAgreement {
     bool public sellerPaysClosingFees;
     bool public isSold;
 
-
     event AgreementUpdated(uint256 newPrice, bool sellerPaysFees);
     event PropertyPurchased(address indexed buyer, uint256 price);
     event FundsWithdrawn(address indexed to, uint256 amount);
