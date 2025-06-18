@@ -16,7 +16,6 @@ contract IPFSHashStorage {
         _;
     }
 
-
     function setIPFSHash(string memory _ipfsHash) public onlyOwner {
         ipfsHash = _ipfsHash;
         emit HashSet(msg.sender, _ipfsHash);
