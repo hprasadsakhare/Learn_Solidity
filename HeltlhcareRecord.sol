@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 contract HealthcareRecords {
     address owner;
-
+    
     struct Record {
         uint256 recordID;
         string patientName;
