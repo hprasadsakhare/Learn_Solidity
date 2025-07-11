@@ -6,7 +6,6 @@ contract IPFSHashStorage {
     string private ipfsHash;
 
     event HashSet(address indexed setter, string hash);
-
     constructor() {
         owner = msg.sender;
     }

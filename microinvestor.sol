@@ -5,7 +5,7 @@ contract MicroInvestment {
     address public owner;
     uint256 public minBatchAmount;
     uint256 public accumulatedAmount;
-    
+
     event InvestmentDetected(address indexed user, uint256 amount);
     event BatchReady(uint256 totalAmount);
     event SwapPerformed(uint256 amount, string token);
@@ -22,6 +22,8 @@ contract MicroInvestment {
         require(msg.sender == owner, "Not owner");
         _;
     }
+
+    
     
     function detectInvestment(address user, uint256 amount) external {
         require(amount > 0, "Invalid amount");
@@ -42,6 +44,8 @@ contract MicroInvestment {
     function updateMinBatchAmount(uint256 _newMin) external {
         minBatchAmount = _newMin;
     }
+    
+
     
     receive() external payable {}
 }

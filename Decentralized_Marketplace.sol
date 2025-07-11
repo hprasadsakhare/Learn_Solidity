@@ -28,6 +28,7 @@ contract DecentralizedMarketplace {
     error InvalidPrice();
     error InvalidQuantity();
 
+
     modifier onlySeller(uint _id) {
         if (items[_id].seller != msg.sender) revert NotSeller();
         _;
