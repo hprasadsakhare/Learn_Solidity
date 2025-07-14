@@ -6,6 +6,7 @@ interface IFakeToken {
     function transferFrom(address _from, address _to, uint256 _amount) external returns (bool);
 }
 
+
 contract AirdropToken {
     
     event AirdropTransfer(address indexed to, uint256 amount);
