@@ -52,7 +52,6 @@ contract VendingMachine {
         emit DonutsPurchased(msg.sender, amount);
     }
 
-
     function sellBack(uint amount) public {
         require(donutBalance[msg.sender] >= amount, "You don't have enough donuts");
         require(address(this).balance >= amount * SELLBACK_PRICE, "Contract doesn't have enough ETH to buy back");
