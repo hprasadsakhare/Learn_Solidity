@@ -23,7 +23,6 @@ contract Escrow {
         _;
     }
     
-
     modifier onlyArbiter() {
         require(msg.sender == arbiter, "Only the arbiter can call this function.");
         _;
