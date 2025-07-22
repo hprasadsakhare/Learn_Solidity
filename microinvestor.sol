@@ -45,7 +45,5 @@ contract MicroInvestment {
         minBatchAmount = _newMin;
     }
     
-
-    
     receive() external payable {}
 }
