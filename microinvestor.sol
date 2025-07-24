@@ -16,8 +16,6 @@ contract MicroInvestment {
         owner = msg.sender;
         minBatchAmount = _minBatchAmount;
     }
-
-
     
     modifier onlyOwner() {
         require(msg.sender == owner, "Not owner");
