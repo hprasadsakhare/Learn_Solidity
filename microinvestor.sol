@@ -10,12 +10,14 @@ contract MicroInvestment {
     event BatchReady(uint256 totalAmount);
     event SwapPerformed(uint256 amount, string token);
     
+
     mapping(address => uint256) public userBalances;
      
     constructor(uint256 _minBatchAmount) {
         owner = msg.sender;
         minBatchAmount = _minBatchAmount;
     }
+    
     
     modifier onlyOwner() {
         require(msg.sender == owner, "Not owner");
