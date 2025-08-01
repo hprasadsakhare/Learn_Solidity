@@ -40,13 +40,13 @@ contract Escrow {
         state = EscrowState.AWAITING_PAYMENT;
     }
 
-
     // Buyer deposits funds into escrow
     function deposit() external payable onlyBuyer inState(EscrowState.AWAITING_PAYMENT) {
         require(msg.value > 0, "Deposit amount must be greater than 0.");
         amount = msg.value;
         state = EscrowState.AWAITING_DELIVERY;
     }
+
 
     // Buyer approves the release of funds
     function approveDelivery() external onlyBuyer inState(EscrowState.AWAITING_DELIVERY) {
