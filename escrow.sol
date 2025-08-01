@@ -70,6 +70,7 @@ contract Escrow {
         }
         state = EscrowState.COMPLETE;
     }
+    
 
     // Mark contract as disputed (only buyer or seller can do this)
     function dispute() external {
