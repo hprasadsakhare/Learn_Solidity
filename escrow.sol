@@ -53,7 +53,6 @@ contract Escrow {
         buyerApproval = true;
         finalize();
     }
-    
 
     // Seller confirms the transaction is complete
     function confirmDelivery() external onlySeller inState(EscrowState.AWAITING_DELIVERY) {
