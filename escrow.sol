@@ -47,7 +47,6 @@ contract Escrow {
         state = EscrowState.AWAITING_DELIVERY;
     }
 
-
     // Buyer approves the release of funds
     function approveDelivery() external onlyBuyer inState(EscrowState.AWAITING_DELIVERY) {
         buyerApproval = true;
