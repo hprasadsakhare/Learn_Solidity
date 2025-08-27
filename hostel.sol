@@ -43,8 +43,6 @@ contract Hostel {
         _;
     }
 
-    
-
     // Add new room (Only landlord/owner can do)
     function addRoom(
         string memory _roomname,
