@@ -13,6 +13,7 @@ contract Hostel {
         contractOwner = msg.sender;
     }
 
+
     struct Room {
         uint roomid;
         uint agreementid;
