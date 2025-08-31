@@ -24,7 +24,6 @@ contract MicroInvestment {
     }
 
     
-    
     function detectInvestment(address user, uint256 amount) external {
         require(amount > 0, "Invalid amount");
         userBalances[user] += amount;
