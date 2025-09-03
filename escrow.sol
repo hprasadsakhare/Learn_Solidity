@@ -58,6 +58,7 @@ contract Escrow {
         sellerApproval = true;
         finalize();
     }
+    
 
     // Arbiter resolves disputes
     function resolveDispute(bool releaseToSeller) external onlyArbiter inState(EscrowState.DISPUTED) {
