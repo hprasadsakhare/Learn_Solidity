@@ -21,6 +21,7 @@ contract DecentralizedMarketplace {
     event ItemUpdated(uint indexed id, string name, uint price, uint quantity);
     event ItemDeleted(uint indexed id);
 
+
     error NotSeller();
     error ItemDoesNotExist();
     error InsufficientFunds();
